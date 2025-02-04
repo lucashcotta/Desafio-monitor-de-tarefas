@@ -13,11 +13,13 @@ import com.taskmonitor.Monitoramento_Tarefas.unprocessableEntity.NotFoundEntity;
 import com.taskmonitor.Monitoramento_Tarefas.unprocessableEntity.OkEntity;
 import com.taskmonitor.Monitoramento_Tarefas.unprocessableEntity.UnprocessableEntity;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
 @Service
 @Slf4j
+
 public class TarefaService {
     private TarefaServiceDto tarefaServiceDto;
     private Map<Long,TarefaServiceDto> tarefas = new ConcurrentHashMap<>();
