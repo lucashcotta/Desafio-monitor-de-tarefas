@@ -25,9 +25,9 @@ public class TarefaService {
     private Map<Long,TarefaServiceDto> tarefas = new ConcurrentHashMap<>();
 
     public  void adiocionaTarefa(TarefaServiceDto dto){
-        if(tarefaServiceDto.getDataCriacao().isAfter(OffsetDateTime.now())){
+        if(dto.getDataCriacao().isAfter(OffsetDateTime.now())){
             throw new UnprocessableEntity("HoraCriação não pode ser posterior ao horário atual");
-        }else if(tarefaServiceDto.getPrazo().isBefore(OffsetDateTime.now())){
+        }else if(dto.getPrazo().isBefore(OffsetDateTime.now())){
             throw new UnprocessableEntity(" Prazo não pode ser definido com uma data anterior a data de criacao do projeto");
         }else{
             tarefas.put(GeneretedIdService.generateId(),dto);
