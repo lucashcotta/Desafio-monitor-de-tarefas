@@ -30,6 +30,7 @@ public class TarefaService {
         }else if(dto.getPrazo().isBefore(OffsetDateTime.now())){
             throw new UnprocessableEntity(" Prazo não pode ser definido com uma data anterior a data de criacao do projeto");
         }else{
+            
             tarefas.put(GeneretedIdService.generateId(),dto);
         }
     }
@@ -38,6 +39,14 @@ public class TarefaService {
     public Map<Long,TarefaServiceDto> buscaTarefas(){
         return tarefas;
     }
+
+    public TarefaServiceDto buscaTarefaId(Long id){
+        if(tarefas.get(id) == null){
+            throw new NotFoundEntity("Não existe tarefa com o id informado");
+        }else{
+            TarefaServiceDto tarefaReferente = tarefas.get(id);
+            return tarefaReferente;
+    }   }
 
     public void deletaTarefa(Long id){
 

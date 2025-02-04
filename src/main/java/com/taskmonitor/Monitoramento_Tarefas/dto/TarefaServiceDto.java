@@ -19,7 +19,7 @@ import lombok.ToString;
 public class TarefaServiceDto{
     
     private String Descricao;
-    private OffsetDateTime dataCriacao = OffsetDateTime.now();
+    private OffsetDateTime dataCriacao;
     private OffsetDateTime prazo;
     private boolean concluida;
 
