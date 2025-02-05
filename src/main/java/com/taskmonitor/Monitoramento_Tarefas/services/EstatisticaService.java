@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 import com.taskmonitor.Monitoramento_Tarefas.dto.EstatisticasServiceDto;
 import com.taskmonitor.Monitoramento_Tarefas.dto.TarefaServiceDto;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class EstatisticaService {
 
-    private TarefaService tarefaService;
-    
-    private TarefaServiceDto tarefaServiceDto;
-    
+    private final TarefaService tarefaService;
 
     public EstatisticasServiceDto estatisticasTarefas(){
         Map<Long,TarefaServiceDto> tarefas = tarefaService.buscaTarefas();

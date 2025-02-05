@@ -14,6 +14,7 @@ import com.taskmonitor.Monitoramento_Tarefas.unprocessableEntity.OkEntity;
 import com.taskmonitor.Monitoramento_Tarefas.unprocessableEntity.UnprocessableEntity;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -21,7 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 
 public class TarefaService {
-    private TarefaServiceDto tarefaServiceDto;
     private Map<Long,TarefaServiceDto> tarefas = new ConcurrentHashMap<>();
 
     public  void adiocionaTarefa(TarefaServiceDto dto){
