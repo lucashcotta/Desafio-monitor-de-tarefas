@@ -59,16 +59,17 @@ public class TarefaService {
     }
 
 
-    public Map<Long,TarefaServiceDto> atualizaStatus(Long id){
+    public TarefaServiceDto atualizaStatus(Long id){
         TarefaServiceDto tarefa = tarefas.get(id);
         if(tarefa == null){
             throw new NotFoundEntity("Tarefa nao encontrada");
-        }else if(tarefa.isConcluida() != true){
-            tarefa.setConcluida(true);
-            throw new OkEntity(" A tarefa foi marcada como concluida");
-        }else{
-            throw new OkEntity(" A tarefa já está marcada como concluida");
         }
+        if(tarefa.isConcluida() != true){
+            tarefa.setConcluida(true); 
+            throw new OkEntity(" A tarefa foi marcada como concluida");
+            
+        }    
+        return tarefa;
 
     }
 }
