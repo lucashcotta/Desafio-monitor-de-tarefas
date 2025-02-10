@@ -1,48 +1,47 @@
-Desafio: API REST para Monitoramento de Tarefas
+# Monitoramento De Tarefas
 
-🔹 Tecnologias: Java | Spring Boot | REST API | Map (Armazenamento em Memória)
+Projeto de uma aplicação para monitorar tarefas e exibir estatisticas.
 
-💡Construir uma API REST para Monitoramento de Tarefas, sem uso de banco de dados, apenas utilizando armazenamento em memória. O objetivo era aprimorar meus conhecimentos em Spring Boot e manipulação de dados sem persistência.
+## Funcionalidades
 
-📌 Regras do Desafio
+- Cadastrar/AlterarStatus/Excluir Tarefa
+- Consulta Tarefa específica
+- Exibir estatisticas (Total De Tarefas, Quantidade Concluida, Quantidade Em Andamento, Percentual concluido)
+- API documentada
+- Dados salvos em memória
 
-🔹 Criar uma API REST que permite:
-✅ Cadastrar uma nova tarefa
+## Requisitos
 
-✅ Listar todas as tarefas
+- Java JDK 21
+- Apache Maven = 3.9.9
+- Docker
+- GIT
 
-✅ Buscar uma tarefa por ID
+## Principais Tecnologias Utilizadas
 
-✅ Marcar uma tarefa como concluída
+- Java 21
+- Spring
+- Maven
+- Swagger
+- Docker
 
-✅ Excluir uma tarefa
+## Manual de Configuração
+```
+git clone [https://github.com/lucashcotta/Desafio-monitor-de-tarefas.git](https://github.com/lucashcotta/Desafio-monitor-de-tarefas.git)
 
-🔹 Regras de Negócio:
+```
+Para executar a aplicação
+```
+docker-compose up -d
 
-✔ Uma tarefa começa como "não concluída"
+```
 
-✔ Apenas o status da tarefa pode ser atualizado
+O comando acima irá criar o contaniner docker necessário para o funcionamento da aplicação.
 
-✔ As tarefas devem ser armazenadas em memória (sem banco de dados)
+### Monitoramento_tarefas
+Container com a API Monitoramento-api
 
-🔥 Endpoints da API
+### Documentação API
+Para saber mais sobre os serviços disponiveis na API e suas respectivas URLs, acesse:
 
-📌 Criar uma Tarefa
-
-POST /tarefas
-
-📌 Listar todas as Tarefas
-
-GET /tarefas
-
-📌 Buscar uma Tarefa por ID
-
-GET /tarefas/{id}
-
-📌 Marcar como Concluída
-
-PATCH /tarefas/{id}/concluir
-
-📌 Excluir uma Tarefa
-
-DELETE /tarefas/{id}
+http://localhost:8080/swagger-ui.html#/
